@@ -64,6 +64,7 @@ namespace WPFDBParte2
             cbcompañia.SelectedIndex = 0;
             txtcosto.Text = "";
             txtnombre.Text = "";
+            txtnum.Text = "";
             btnNuevo.Content = "Nuevo";
             txtId.IsEnabled = true;
         }
@@ -78,34 +79,33 @@ namespace WPFDBParte2
             {
                 if (txtId.IsEnabled == true)
                 {
-                    if (cbcompañia.Text != "Selecciona Genero")
+                    if (cbcompañia.Text != "Selecciona marca de auto")
                     {
-                        cmd.CommandText = "insert into Progra(Id,Nombre,Genero,Telefono,Direccion) " +
-                            "Values(" + txtId.Text + ",'"  + cbcompañia.Text + "'," + txtcosto.Text + ",'" + txtnombre.Text + "')";
+                        cmd.CommandText = "insert into autos(Marca,Comapñia,Costo,Nombre del comprador,Telefono) " +
+                            "Values(" + txtId.Text + ",'" + "','" + cbcompañia.Text + "'," + txtcosto.Text + ",'" + txtnombre.Text+ "'," + txtnum.Text + "')";
                         cmd.ExecuteNonQuery();
                         MostrarDatos();
-                        MessageBox.Show("Alumno agregado correctamente...");
+                        MessageBox.Show(" agregado correctamente...");
                         LimpiaTodo();
 
                     }
                     else
                     {
-                        MessageBox.Show("Favor de seleccionar el genero....");
+                        MessageBox.Show("Favor de seleccionar la marca de auto....");
                     }
-                }
-                else
+                }else
                 {
-                    cmd.CommandText = "update Progra set Nombre='" + "',Genero='" + cbcompañia.Text + "',Telefono=" + txtcosto.Text
-                        + ",Direccion='" + txtnombre.Text + "' where Id=" + txtId.Text;
+                    cmd.CommandText = "update Progra set Nombre='" + "',Marca='" + cbcompañia.Text + "',Costo=" + txtcosto.Text
+                        + ",Nombre del comprador='" + txtnombre.Text+ "',Numero telefonico del comprador =" + txtnum.Text +"' where Id=" + txtId.Text;
                     cmd.ExecuteNonQuery();
                     MostrarDatos();
-                    MessageBox.Show("Datos del alumno Actualizados...");
+                    MessageBox.Show("El registro de autos ha sido actualizado...");
                     LimpiaTodo();
                 }
             }
             else
             {
-                MessageBox.Show("Favor de poner el ID de un Alumno.......");
+                MessageBox.Show("Favor de poner sus registros.......");
             }
         }
 
@@ -114,16 +114,17 @@ namespace WPFDBParte2
             if (gvDatos.SelectedItems.Count > 0)
             {
                 DataRowView row = (DataRowView)gvDatos.SelectedItems[0];
-                txtId.Text = row["Id"].ToString(); 
+                txtId.Text = row["Id"].ToString();
                 cbcompañia.Text = row["Genero"].ToString();
                 txtcosto.Text = row["Telefono"].ToString();
                 txtnombre.Text = row["Direccion"].ToString();
+                txtnum.Text = row["Direccion"].ToString();
                 txtId.IsEnabled = false;
                 btnNuevo.Content = "Actualizar";
             }
             else
             {
-                MessageBox.Show("Favor de seleccionar un alumno...");
+                MessageBox.Show("Favor de seleccionar un auto...");
             }
 
         }
@@ -137,10 +138,10 @@ namespace WPFDBParte2
                 if (con.State != ConnectionState.Open)
                     con.Open();
                 cmd.Connection = con;
-                cmd.CommandText = "Delete fromo Progra where Id=" + row["Id"].ToString();
+                cmd.CommandText = "Delete fromo auto where Id=" + row["Id"].ToString();
                 cmd.ExecuteNonQuery();
                 MostrarDatos();
-                MessageBox.Show("Comprador de auto eliminado...");
+                MessageBox.Show("Registro de auto eliminado...");
                 LimpiaTodo();
             }
 

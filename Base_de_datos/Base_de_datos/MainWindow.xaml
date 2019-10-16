@@ -20,9 +20,9 @@
     </Window.Resources>
     <DockPanel Name="dockMain" VerticalAlignment="Stretch" HorizontalAlignment="Center" LastChildFill="False">
         <StackPanel>
-            <Label Content="Autos" HorizontalAlignment="Center" FontSize="40" FontWeight="ExtraBlack"></Label>
+            <Label Content=" Registro de Autos vendidos" HorizontalAlignment="Center" FontSize="40" FontWeight="ExtraBlack"></Label>
             <WrapPanel>
-                <TextBlock Text="Id Marca de auto : "/>
+                <TextBlock Text=" Marca de auto : "/>
                 <TextBox Name="txtId" />
             </WrapPanel>
             <WrapPanel>
@@ -46,12 +46,16 @@
                 <TextBlock Text="Nombre del comprador : "/>
                 <TextBox Name="txtnombre" TextWrapping="Wrap" AcceptsReturn="True" Height="75" />
             </WrapPanel>
+            <WrapPanel>
+                <TextBlock Text="Numero telefonico : "/>
+                <TextBox Name="txtnum" TextWrapping="Wrap" AcceptsReturn="True" Height="75" />
+            </WrapPanel>
             <WrapPanel Margin="0" HorizontalAlignment="Center" Height="59">
                 <Button Name="btnNuevo" Content="Nuevo" FontSize="25" Width="120" Margin="5" Click="BtnNuevo_Click" />
                 <Button Name="btnEditar" Content="Editar" FontSize="25" Width="120" Margin="5" Click="BtnEditar_Click" />
                 <Button Name="btnEliminar" Content="Eliminar" FontSize="25" Width="120" Margin="5" Click="BtnEliminar_Click" />
                 <Button Name="btnCancelar" Content="Cancelar" FontSize="25" Width="120" Margin="5" Click="BtnCancelar_Click" />
-                <Button Name="btnSalir" Content="Salir" FontSize="25" Width="120" Margin="5" Background="#400000" Foreground="Bisque" Click="BtnSalir_Click" />
+                <Button Name="btnSalir" Content="Salir" FontSize="25" Width="120" Margin="5" Background="HotPink" Foreground="Bisque" Click="BtnSalir_Click" />
             </WrapPanel>
             <Label Content="No encontre Registros." Name="lbContenido" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold" Foreground="#FFE10000"></Label>
             <WrapPanel Margin="20" HorizontalAlignment="Center">
