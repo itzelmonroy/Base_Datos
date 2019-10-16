@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFDBParte2"
         mc:Ignorable="d"
-        Title="Registro de autos"  Height="800" Width="800" Background="AliceBlue" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+        Title="Registro de autos"  Height="700" Width="700" Background="Aquamarine" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="22"/>
@@ -14,7 +14,7 @@
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="FontSize" Value="22"/>
-            <Setter Property="Width" Value="300"/>
+            <Setter Property="Width" Value="400"/>
             <Setter Property="Margin" Value="15"/>
         </Style>
     </Window.Resources>
@@ -44,7 +44,7 @@
             </WrapPanel>
             <WrapPanel>
                 <TextBlock Text="Nombre del comprador : "/>
-                <TextBox Name="txt" TextWrapping="Wrap" AcceptsReturn="True" Height="75" />
+                <TextBox Name="txtnombre" TextWrapping="Wrap" AcceptsReturn="True" Height="75" />
             </WrapPanel>
             <WrapPanel Margin="0" HorizontalAlignment="Center" Height="59">
                 <Button Name="btnNuevo" Content="Nuevo" FontSize="25" Width="120" Margin="5" Click="BtnNuevo_Click" />
